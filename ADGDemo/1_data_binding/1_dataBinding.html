@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app ng-init="qty=1;cost=2">
+  <head>
+    <title>A first example: Data binding</title>
+    <script type="text/javascript" src="../js/angular.js"></script>
+  </head>
+  <body>
+    <header>
+      <b>A first example: Data binding</b>
+    </header>
+    <b>Invoice</b>
+    <div>
+      Quantity : <input type="number" min="0" ng-model='qty'></input>
+    </div>
+    <div>
+      Cost : <input type="number" min="0" ng-model='cost'></input>
+    </div>
+    <div>
+      <b>Total : </b> {{ qty*cost | currency }} 
+      <!-- {{ expression | filter }} -->
+      <!-- The example above also contains a filter. A filter formats the value of an expression for display to the user. In the example above, the filter currency formats a number into an output that looks like money. -->
+    </div>
+  </body>
+</html>
