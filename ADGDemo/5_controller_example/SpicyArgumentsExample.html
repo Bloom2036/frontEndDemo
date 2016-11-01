@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-controller-spicy-2-production</title>
+  <script type="text/javascript" src="../js/angular.js"></script> 
+  <script src="SpicyArgumentsExample.js"></script>
+</head>
+<body ng-app="spicyApp2">
+  <div ng-controller="SpicyController">
+ <input ng-model="customSpice">
+ <button ng-click="spicy('chili')">Chili</button>
+ <button ng-click="spicy(customSpice)">Custom spice</button>
+ <p>The food is {{spice}} spicy!</p>
+</div>
+</body>
+</html>
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

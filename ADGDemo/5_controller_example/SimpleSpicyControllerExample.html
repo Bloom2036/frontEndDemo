@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-controller-spicy-1-production</title>
+  <script type="text/javascript" src="../js/angular.js"></script> 
+  <script src="SimpleSpicyControllerExample.js"></script>
+</head>
+<body ng-app="spicyApp1">
+  <div ng-controller="SpicyController">
+ <button ng-click="chiliSpicy()">Chili</button>
+ <button ng-click="jalapenoSpicy()">Jalapeño</button>
+ <p>The food is {{spice}} spicy!</p>
+</div>
+</body>
+</html>
+
+<!-- 
+Things to notice in the example above:
+**The ng-controller directive is used to (implicitly) create a scope for our template, and the scope is augmented (managed) by the SpicyController Controller.
+**SpicyController is just a plain JavaScript function. As an (optional) naming convention the name starts with capital letter and ends with "Controller".
+**Assigning a property to $scope creates or updates the model.
+**Controller methods can be created through direct assignment to scope (see the chiliSpicy method)
+**The Controller methods and properties are available in the template (for both the <div> element and its children).
+-->

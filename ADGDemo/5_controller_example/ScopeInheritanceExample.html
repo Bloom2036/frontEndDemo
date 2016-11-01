@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-controller-scope-inheritance-production</title>
+  <link href="ScopeInheritanceExample.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../js/angular.js"></script> 
+  <script src="ScopeInheritanceExample.js"></script>
+</head>
+<body ng-app="scopeInheritance">
+  <div class="spicy">
+  <div ng-controller="MainController">
+    <p>Good {{timeOfDay}}, {{name}}!</p>
+
+    <div ng-controller="ChildController">
+      <p>Good {{timeOfDay}}, {{name}}!</p>
+
+      <div ng-controller="GrandChildController">
+        <p>Good {{timeOfDay}}, {{name}}!</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+<!-- 
+Notice how we nested three ng-controller directives in our template. This will result in four scopes being created for our view:
+
+*The root scope
+*The MainController scope, which contains timeOfDay and name properties
+*The ChildController scope, which inherits the timeOfDay property but overrides (hides) the name property from the previous
+*The GrandChildController scope, which overrides (hides) both the timeOfDay property defined in MainController and the name property defined in ChildController
+-->
