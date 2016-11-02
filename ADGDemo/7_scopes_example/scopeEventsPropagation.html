@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='eventExample'>
+  <head>
+    <title>Example - example-scope-events-propagation-production</title>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="scopeEventsPropagation.js"></script>
+  </head>
+  <body>
+    <header>
+      <b>Example - example-scope-events-propagation-production</b>
+    </header>
+    <div ng-controller="EventController">
+      Root Scope <tt>My Event</tt> count : {{count}}
+      <ul>
+        <li ng-repeat="i in [1]" ng-controller="EventController">
+          <button ng-click="$emit('MyEvent')">$emit('MyEvent')</button>
+          <button ng-click="$broadcast('MyEvent')">$broadcast('MyEvent')</button>
+          <br/>
+          Middle Scope <tt>My Event</tt> count: {{count}}
+          <ul>
+            <li ng-repeat="item in [1, 2]" ng-controller="EventController">
+              Leaf Scope <tt>My Event</tt> count: {{count}}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

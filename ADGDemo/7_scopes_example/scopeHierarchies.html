@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='scopeExample'>
+  <head>
+    <title>Scope Hierarchies</title>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="scopeHierarchies.js"></script>
+    <link rel="stylesheet" type="text/css" href="scopeHierarchies.css">
+  </head>
+  <body>
+    <header>
+      <b>Scope Hierarchies</b>
+    </header>
+    <div class="show-scope-demo">
+    <!-- $scope.name = 'World'-->
+      <div ng-controller="GreetController">
+        Hello {{name}}!
+      </div>
+      <!-- $scope.name = [....] -->
+      <div ng-controller="ListController">
+        <ol>
+          <li ng-repeat="name in names">{{name}} from {{department}}</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>

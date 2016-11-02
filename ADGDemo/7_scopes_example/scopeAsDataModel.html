@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app='scopeExample'>
+  <head>
+    <title>Scope as Data-Model</title>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="scopeAsDataModel.js"></script>
+  </head>
+  <body ng-controller="MyController">
+    <header>
+      <b>Scope as Data-Model</b>
+    </header>
+    Your name:
+    <input type="text" ng-model='username'></input>
+    <button ng-click="sayHello()">greet</button>
+    {{greeting}}
+  </body>
+</html>
